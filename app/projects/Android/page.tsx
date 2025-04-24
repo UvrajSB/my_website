@@ -1,110 +1,155 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowLeft, Calendar, Tag, User, ExternalLink, Github } from "lucide-react"
 import { motion } from "framer-motion"
+import { ArrowLeft, Calendar, Tag, User, ExternalLink, Github } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { PageTransition } from "@/components/page-transition"
 import { AnimatedSection } from "@/components/animated-section"
 import { BackgroundPattern } from "@/components/background-pattern"
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
-  // In a real app, you would fetch this data from a CMS or database
-  const project = {
-    id: params.id,
-    title: `Project ${params.id}`,
-    description: "A comprehensive case study of this innovative project that solved real-world problems.",
-    date: "April 2023",
-    client: "Client Name",
-    role: "Lead Developer & Product Strategist",
-    tags: ["Web Development", "UX Design", "E-commerce", "React", "Node.js"],
-    website: "https://example.com",
-    github: "https://github.com/yourusername/project",
-    coverImage: `/placeholder.svg?height=600&width=1200&text=Project+${params.id}+Cover`,
+const androidProjects = [
+  {
+    id: "abtris-app",
+    title: "Unstoppable – Native Android App for Abtris",
+    description: "Designed and built a production-ready Android app from scratch for Abtris, featuring a neumorphic UI and modern native architecture.",
+    date: "2023",
+    client: "Abtris (Startup)",
+    role: "Android Developer Intern",
+    tags: ["Android", "Kotlin", "UI/UX", "Neumorphism", "Internship"],
+    website: "https://play.google.com/store/apps/details?id=so.dev.unstoppable",
+    github: "",
     content: [
       {
         type: "heading",
-        content: "Project Overview",
-      },
-      {
-        type: "paragraph",
-        content:
-          "This project was developed to address specific challenges in the industry. The client needed a solution that would streamline their operations while providing an exceptional user experience for their customers.",
+        content: "Overview",
       },
       {
         type: "image",
-        url: `/placeholder.svg?height=400&width=800&text=Project+Image+1`,
-        caption: "Early wireframes and design concepts for the project",
-      },
-      {
-        type: "heading",
-        content: "The Challenge",
+        url: "/abtris.png",
+        caption: "",
       },
       {
         type: "paragraph",
         content:
-          "The main challenges we faced included integrating with legacy systems, ensuring scalability for future growth, and creating an intuitive interface that would require minimal training for end users.",
-      },
-      {
-        type: "video",
-        url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        caption: "Demo video showcasing the project functionality",
+          "As part of my internship at Abtris, I developed the Unstoppable app from the ground up using modern native Android tools. A key challenge was implementing a Neumorphic UI — a design trend with very limited library support at the time — which required several custom UI workarounds to maintain performance and style integrity.",
       },
       {
         type: "heading",
-        content: "The Solution",
-      },
-      {
-        type: "paragraph",
-        content:
-          "We developed a comprehensive solution using modern technologies and best practices. The architecture was designed to be modular and scalable, allowing for easy maintenance and future enhancements.",
-      },
-      {
-        type: "image",
-        url: `/placeholder.svg?height=400&width=800&text=Project+Image+2`,
-        caption: "Final design and implementation of the main dashboard",
-      },
-      {
-        type: "heading",
-        content: "Technical Details",
+        content: "Highlights",
       },
       {
         type: "table",
-        headers: ["Technology", "Purpose", "Benefits"],
+        headers: ["Feature", "Description"],
         rows: [
-          ["React", "Frontend Framework", "Component-based architecture, reusable UI elements"],
-          ["Node.js", "Backend Server", "Asynchronous processing, excellent performance"],
-          ["PostgreSQL", "Database", "Relational data structure, ACID compliance"],
-          ["AWS", "Cloud Infrastructure", "Scalability, reliability, global reach"],
+          ["Neumorphic UI", "Created custom widgets to implement soft shadows and raised effects"],
+          ["Kotlin + Jetpack", "Used ViewModel, LiveData, and Navigation components"],
+          ["Production Release", "Live on Google Play Store and used by real users"],
         ],
       },
+    ],
+  },
+  {
+    id: "android-teaching",
+    title: "Android Dev Educator – 500+ Learners Taught",
+    description: "Led sessions and tutorials on Android development for students and professionals across India.",
+    date: "2020 – 2024",
+    client: "Developer Communities",
+    role: "Instructor & Mentor",
+    tags: ["Android", "Teaching", "Workshops", "YouTube", "Community"],
+    website: "https://www.youtube.com/live/RIQN356dJ3k?si=Mum-AvlLCGcp_Qto",
+    github: "",
+    content: [
       {
         type: "heading",
-        content: "Results & Impact",
+        content: "Overview",
       },
       {
         type: "paragraph",
         content:
-          "The project resulted in a 40% increase in operational efficiency and a 25% reduction in customer support inquiries. User satisfaction scores improved by 35% within the first three months of deployment.",
+          "I've delivered hands-on Android development sessions to over 500 students and professionals through workshops, livestreams, and structured tutorials. My focus has always been on real-world application, clean architecture, and demystifying modern Android concepts.",
+      },
+      {
+        type: "heading",
+        content: "Notable Session",
+      },
+      {
+        type: "paragraph",
+        content:
+          "• Topic: Getting Started with Android UI\n• Duration: 2.5 hours\n• Format: Live Demo + Q&A\n• Audience: University students + working developers\n• Link: See full session on [YouTube](https://www.youtube.com/live/RIQN356dJ3k?si=Mum-AvlLCGcp_Qto)",
+      },
+    ],
+  },
+  {
+    id: "ankidroid",
+    title: "Open Source Contributor – AnkiDroid",
+    description: "Contributed to the widely-used AnkiDroid flashcards app by helping improve core functionality and UI consistency.",
+    date: "2022",
+    client: "AnkiDroid Open Source",
+    role: "Contributor",
+    tags: ["Android", "Open Source", "Contributions", "Anki", "Java"],
+    website: "https://play.google.com/store/apps/details?id=com.ichi2.anki",
+    github: "",
+    coverImage: "/images/ankidroid-cover.png",
+    content: [
+      {
+        type: "heading",
+        content: "Overview",
       },
       {
         type: "image",
-        url: `/placeholder.svg?height=400&width=800&text=Project+Image+3`,
-        caption: "Analytics dashboard showing performance improvements after implementation",
-      },
-      {
-        type: "heading",
-        content: "Lessons Learned",
+        url: "/anki.png",
       },
       {
         type: "paragraph",
         content:
-          "Throughout this project, we learned valuable lessons about user research, iterative development, and stakeholder communication. These insights have informed our approach to subsequent projects and continue to shape our methodology.",
+          "AnkiDroid is a popular open-source Android app for spaced-repetition learning. I contributed to improving layout bugs and UI edge cases in the review screen. These fixes helped improve usability across a variety of Android devices.",
       },
     ],
-  }
+  },
+  {
+    id: "jewellery-app",
+    title: "JewelleryApp – Android Shopping App",
+    description: "A sleek, Firebase-backed shopping app for showcasing and purchasing items — built as a personal side project.",
+    date: "2022",
+    client: "Personal Project",
+    role: "Designer & Developer",
+    tags: ["Android", "Firebase", "MVVM", "Personal Project"],
+    website: "https://github.com/UvrajSB/JewelleryApp",
+    github: "https://github.com/UvrajSB/JewelleryApp",
+    content: [
+      {
+        type: "heading",
+        content: "Overview",
+      },
+      {
+        type: "image",
+        url: "/shoppingapp.png",
+      },
+      {
+        type: "paragraph",
+        content:
+          "This shopping app demonstrates end-to-end Android development — from user login to product browsing and basic cart operations. The app uses Firebase for authentication and backend services and focuses on creating a clean, user-friendly shopping experience.",
+      },
+      {
+        type: "heading",
+        content: "Tech Highlights",
+      },
+      {
+        type: "table",
+        headers: ["Feature", "Usage"],
+        rows: [
+          ["Firebase Auth + Firestore", "User login and product data storage"],
+          ["Custom UI", "Designed item cards, navigation, and clean product views"],
+          ["Jetpack Navigation", "Screen routing with back stack management"],
+        ],
+      },
+    ],
+  },
+]
 
+export default function AndroidProjectsPage() {
   return (
     <PageTransition>
       <div className="relative">
@@ -119,13 +164,14 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
             </Link>
           </AnimatedSection>
 
-          <div className="mt-8 max-w-4xl mx-auto">
-            <AnimatedSection>
-              <h1 className="text-4xl font-bold tracking-tight md:text-5xl">{project.title}</h1>
-              <p className="mt-4 text-xl text-gray-500 dark:text-gray-400">{project.description}</p>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.1} className="mt-8">
+          <div className="mt-8 max-w-4xl mx-auto space-y-16">
+            {androidProjects.map((project, index) => (
+              <div key={project.id}>
+                <AnimatedSection>
+                  <h1 className="text-4xl font-bold tracking-tight md:text-5xl">{project.title}</h1>
+                  <p className="mt-4 text-xl text-gray-500 dark:text-gray-400">{project.description}</p>
+                </AnimatedSection>
+                {/* <AnimatedSection delay={0.1} className="mt-8">
               <div className="aspect-video w-full overflow-hidden rounded-lg">
                 <motion.img
                   src={project.coverImage}
@@ -136,146 +182,128 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
                   transition={{ duration: 0.5 }}
                 />
               </div>
-            </AnimatedSection>
+            </AnimatedSection> */}
 
-            <AnimatedSection delay={0.2} className="mt-8 grid gap-6 md:grid-cols-2">
-              <div className="space-y-4">
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-5 w-5 text-primary" />
-                  <span className="text-gray-500 dark:text-gray-400">Date: {project.date}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <User className="h-5 w-5 text-primary" />
-                  <span className="text-gray-500 dark:text-gray-400">Client: {project.client}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Tag className="h-5 w-5 text-primary" />
-                  <span className="text-gray-500 dark:text-gray-400">Role: {project.role}</span>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex items-center gap-4">
-                  {project.website && (
-                    <Link href={project.website} target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" size="sm" className="gap-2">
-                        <ExternalLink className="h-4 w-4" />
-                        Visit Website
-                      </Button>
-                    </Link>
-                  )}
-                  {project.github && (
-                    <Link href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" size="sm" className="gap-2">
-                        <Github className="h-4 w-4" />
-                        View Code
-                      </Button>
-                    </Link>
-                  )}
-                </div>
-              </div>
-            </AnimatedSection>
+                <AnimatedSection delay={0.2} className="mt-8 grid gap-6 md:grid-cols-2">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="h-5 w-5 text-primary" />
+                      <span className="text-gray-500 dark:text-gray-400">Date: {project.date}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <User className="h-5 w-5 text-primary" />
+                      <span className="text-gray-500 dark:text-gray-400">Client: {project.client}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Tag className="h-5 w-5 text-primary" />
+                      <span className="text-gray-500 dark:text-gray-400">Role: {project.role}</span>
+                    </div>
+                  </div>
 
-            <div className="mt-12 space-y-8">
-              {project.content.map((section, index) => {
-                switch (section.type) {
-                  case "heading":
-                    return (
-                      <AnimatedSection key={index} delay={0.05 * index} className="mt-8">
-                        <h2 className="text-2xl font-bold tracking-tight md:text-3xl">{section.content}</h2>
-                      </AnimatedSection>
-                    )
-                  case "paragraph":
-                    return (
-                      <AnimatedSection key={index} delay={0.05 * index} className="text-gray-500 dark:text-gray-400">
-                        <p>{section.content}</p>
-                      </AnimatedSection>
-                    )
-                  case "image":
-                    return (
-                      <AnimatedSection key={index} delay={0.05 * index}>
-                        <figure className="my-8">
-                          <div className="overflow-hidden rounded-lg">
-                            <motion.img
-                              src={section.url}
-                              alt={section.caption || "Project image"}
-                              className="w-full"
-                              whileHover={{ scale: 1.03 }}
-                              transition={{ duration: 0.3 }}
-                            />
-                          </div>
-                          {section.caption && (
-                            <figcaption className="mt-2 text-center text-sm text-gray-500 dark:text-gray-400">
-                              {section.caption}
-                            </figcaption>
-                          )}
-                        </figure>
-                      </AnimatedSection>
-                    )
-                  case "video":
-                    return (
-                      <AnimatedSection key={index} delay={0.05 * index}>
-                        <figure className="my-8">
-                          <div className="overflow-hidden rounded-lg aspect-video">
-                            <iframe
-                              src={section.url}
-                              title="Video"
-                              className="w-full h-full"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowFullScreen
-                            ></iframe>
-                          </div>
-                          {section.caption && (
-                            <figcaption className="mt-2 text-center text-sm text-gray-500 dark:text-gray-400">
-                              {section.caption}
-                            </figcaption>
-                          )}
-                        </figure>
-                      </AnimatedSection>
-                    )
-                  case "table":
-                    return (
-                      <AnimatedSection key={index} delay={0.05 * index}>
-                        <div className="my-8 overflow-x-auto">
-                          <table className="w-full border-collapse">
-                            <thead>
-                              <tr className="border-b">
-                                {section.headers.map((header, i) => (
-                                  <th key={i} className="px-4 py-2 text-left font-medium">
-                                    {header}
-                                  </th>
-                                ))}
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {section.rows.map((row, i) => (
-                                <tr key={i} className="border-b">
-                                  {row.map((cell, j) => (
-                                    <td key={j} className="px-4 py-2 text-gray-500 dark:text-gray-400">
-                                      {cell}
-                                    </td>
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex items-center gap-4">
+                      {project.website && (
+                        <Link href={project.website} target="_blank" rel="noopener noreferrer">
+                          <Button variant="outline" size="sm" className="gap-2">
+                            <ExternalLink className="h-4 w-4" />
+                            Visit Website
+                          </Button>
+                        </Link>
+                      )}
+                      {project.github && (
+                        <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Button variant="outline" size="sm" className="gap-2">
+                            <Github className="h-4 w-4" />
+                            View Code
+                          </Button>
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                </AnimatedSection>
+
+                <div className="mt-12 space-y-8">
+                  {project.content.map((section, index) => {
+                    switch (section.type) {
+                      case "heading":
+                        return (
+                          <AnimatedSection key={index} delay={0.1 * index} className="mt-8">
+                            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">{section.content}</h2>
+                          </AnimatedSection>
+                        )
+                      case "image":
+                          return (
+                            <AnimatedSection key={index} delay={0.05 * index}>
+                              <figure className="my-8">
+                                <div className="overflow-hidden rounded-lg">
+                                  <motion.img
+                                    src={section.url}
+                                    alt={section.caption || "Project image"}
+                                    className="w-full"
+                                    whileHover={{ scale: 1.03 }}
+                                    transition={{ duration: 0.3 }}
+                                  />
+                                </div>
+                                {section.caption && (
+                                  <figcaption className="mt-2 text-center text-sm text-gray-500 dark:text-gray-400">
+                                    {section.caption}
+                                  </figcaption>
+                                )}
+                              </figure>
+                            </AnimatedSection>
+                      )
+                      case "paragraph":
+                        return (
+                          <AnimatedSection key={index} delay={0.1 * index} className="text-gray-500 dark:text-gray-400 whitespace-pre-line">
+                            <p>{section.content}</p>
+                          </AnimatedSection>
+                        )
+                      case "table":
+                        return (
+                          <AnimatedSection key={index} delay={0.1 * index}>
+                            <div className="my-8 overflow-x-auto">
+                              <table className="w-full border-collapse">
+                                <thead>
+                                  <tr className="border-b">
+                                    {section.headers.map((header, i) => (
+                                      <th key={i} className="px-4 py-2 text-left font-medium">
+                                        {header}
+                                      </th>
+                                    ))}
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {section.rows.map((row, i) => (
+                                    <tr key={i} className="border-b">
+                                      {row.map((cell, j) => (
+                                        <td key={j} className="px-4 py-2 text-gray-500 dark:text-gray-400">
+                                          {cell}
+                                        </td>
+                                      ))}
+                                    </tr>
                                   ))}
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                        </div>
-                      </AnimatedSection>
-                    )
-                  default:
-                    return null
-                }
-              })}
-            </div>
+                                </tbody>
+                              </table>
+                            </div>
+                          </AnimatedSection>
+                        )
+                      default:
+                        return null
+                    }
+                  })}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

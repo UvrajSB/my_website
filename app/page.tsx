@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, Github, Linkedin, Twitter, Clock } from "lucide-react"
 import { motion } from "framer-motion"
+import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { PageTransition } from "@/components/page-transition"
@@ -13,33 +13,12 @@ import { BackgroundShapes } from "@/components/background-shapes"
 import { AnimatedCard } from "@/components/animated-card"
 
 export default function Home() {
-  // Sample timeline data for homepage
-  const timelineHighlights = [
-    {
-      id: 1,
-      year: "2023",
-      title: "Launched Third Startup",
-      description: "Successfully launched my third venture, focusing on sustainable technology solutions.",
-    },
-    {
-      id: 2,
-      year: "2021",
-      title: "Published First Book",
-      description: "Wrote and published my first book on entrepreneurship, sharing insights from my journey.",
-    },
-    {
-      id: 3,
-      year: "2019",
-      title: "First Successful Exit",
-      description: "Successfully sold my first startup, marking a significant milestone in my journey.",
-    },
-  ]
-
   return (
     <PageTransition>
       <div className="flex flex-col min-h-screen">
         <main className="flex-1">
-        <section className="w-full py-6 md:py-12 lg:py-16 xl:py-20 relative overflow-hidden">
+          {/* Hero Section */}
+          <section className="w-full py-6 md:py-12 lg:py-16 xl:py-20 relative overflow-hidden">
             <BackgroundGradient variant="accent" />
             <BackgroundShapes variant="circles" count={8} />
             <div className="container px-4 md:px-6 relative z-10">
@@ -84,46 +63,32 @@ export default function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.5 }}
                   >
-                    <Link
-                      href="https://twitter.com/yourusername"
-                      className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 transition-colors"
-                    >
+                    <Link href="https://twitter.com/yourusername" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 transition-colors">
                       <Twitter className="h-5 w-5" />
-                      <span className="sr-only">Twitter</span>
                     </Link>
-                    <Link
-                      href="https://github.com/yourusername"
-                      className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 transition-colors"
-                    >
+                    <Link href="https://github.com/UvrajSB" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 transition-colors">
                       <Github className="h-5 w-5" />
-                      <span className="sr-only">GitHub</span>
                     </Link>
-                    <Link
-                      href="https://linkedin.com/in/yourusername"
-                      className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 transition-colors"
-                    >
+                    <Link href="https://linkedin.com/in/yuvrajbhadauria" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 transition-colors">
                       <Linkedin className="h-5 w-5" />
-                      <span className="sr-only">LinkedIn</span>
                     </Link>
                   </motion.div>
                 </AnimatedSection>
+
                 <AnimatedSection delay={0.3} direction="left" className="flex items-center justify-center order-1 lg:order-2">
                   <motion.div
                     className="relative w-full max-w-[200px] md:max-w-[350px] aspect-[3/4.5] overflow-hidden rounded-xl"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <img
-                      src="mypic2.png"
-                      alt="Profile"
-                      className="object-cover w-full h-full"
-                    />
+                    <img src="mypic2.png" alt="Profile" className="object-cover w-full h-full" />
                   </motion.div>
                 </AnimatedSection>
               </div>
             </div>
           </section>
 
+          {/* Featured Projects */}
           <section className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
             <BackgroundPattern variant="grid" />
             <div className="container px-4 md:px-6 relative z-10">
@@ -131,32 +96,51 @@ export default function Home() {
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Featured Projects</h2>
                   <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                    Check out some of my recent work and entrepreneurial ventures.
+                    Check out some of my recent works.
                   </p>
                 </div>
               </AnimatedSection>
-              <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3">
 
-                  <AnimatedCard
-                    key={1}
-                    delay={0.2 * 1}
-                    className="rounded-lg border bg-card text-card-foreground shadow-sm"
-                  >
-                    <div className="p-6 space-y-4">
-                      <div className="aspect-video overflow-hidden rounded-lg">
-                        <motion.img
-                          src={`/p1.jpg?height=200&width=300&text=Project+1`}
-                          alt={`Project 1`}
-                          className="object-cover w-full"
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.3 }}
-                        />
+              <div className="mx-auto grid max-w-5xl items-stretch gap-6 py-12 lg:grid-cols-3">
+                {[
+                  {
+                    id: "privagent",
+                    title: "Privacy Centric AI Systems",
+                    description: "Developing privacy-centric AI systems with Federated learning & Privacy-Enhancement Techniques for the past 3 years.",
+                    image: "/p2.jpg",
+                    href: "/projects/Privacy",
+                  },
+                  {
+                    id: "llm",
+                    title: "LLMs",
+                    description: "Working with agentic frameworks, on-device deployment and optimisations of Small language models for edge.",
+                    image: "/p3.jpg",
+                    href: "/projects/llm",
+                  },
+                  {
+                    id: "rf",
+                    title: "RF Sensing",
+                    description: "Developed batterless IoT sensing system using tunnel diodes for unintrusive respiratory rate monitoring.",
+                    image: "p1.jpg",
+                    href: "/projects/RF",
+                  },
+                ].map((project, index) => (
+                  <AnimatedCard key={project.id} delay={0.2 * index} className="rounded-lg border bg-card text-card-foreground shadow-sm h-full flex flex-col justify-between">
+                    <div className="p-6 flex flex-col h-full">
+                      <div className="space-y-4 flex-1">
+                        <div className="aspect-video overflow-hidden rounded-lg">
+                          <motion.img
+                            src={project.image}
+                            alt={project.title}
+                            className="object-cover w-full h-full"
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        </div>
+                        <h3 className="text-2xl font-bold">{project.title}</h3>
+                        <p className="text-gray-500 dark:text-gray-400">{project.description}</p>
                       </div>
-                      <h3 className="text-2xl font-bold">Project {1}</h3>
-                      <p className="text-gray-500 dark:text-gray-400">
-                        A brief description of this amazing project and what problems it solves.
-                      </p>
-                      <Link href={`/projects/1`}>
+                      <Link href={project.href} className="mt-4">
                         <Button variant="outline" className="w-full relative overflow-hidden group">
                           <span className="relative z-10">View Project</span>
                           <motion.div
@@ -169,75 +153,9 @@ export default function Home() {
                       </Link>
                     </div>
                   </AnimatedCard>
-
-                  <AnimatedCard
-                    key={1}
-                    delay={0.2 * 1}
-                    className="rounded-lg border bg-card text-card-foreground shadow-sm"
-                  >
-                    <div className="p-6 space-y-4">
-                      <div className="aspect-video overflow-hidden rounded-lg">
-                        <motion.img
-                          src={`/p1.jpg?height=200&width=300&text=Project+1`}
-                          alt={`Project 1`}
-                          className="object-cover w-full"
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.3 }}
-                        />
-                      </div>
-                      <h3 className="text-2xl font-bold">Project {1}</h3>
-                      <p className="text-gray-500 dark:text-gray-400">
-                        A brief description of this amazing project and what problems it solves.
-                      </p>
-                      <Link href={`/projects/1`}>
-                        <Button variant="outline" className="w-full relative overflow-hidden group">
-                          <span className="relative z-10">View Project</span>
-                          <motion.div
-                            className="absolute inset-0 bg-primary/10"
-                            initial={{ x: "-100%" }}
-                            whileHover={{ x: 0 }}
-                            transition={{ duration: 0.3 }}
-                          />
-                        </Button>
-                      </Link>
-                    </div>
-                  </AnimatedCard>
-
-                  <AnimatedCard
-                    key={1}
-                    delay={0.2 * 1}
-                    className="rounded-lg border bg-card text-card-foreground shadow-sm"
-                  >
-                    <div className="p-6 space-y-4">
-                      <div className="aspect-video overflow-hidden rounded-lg">
-                        <motion.img
-                          src={`/p1.jpg?height=200&width=300&text=Project+1`}
-                          alt={`Project 1`}
-                          className="object-cover w-full"
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.3 }}
-                        />
-                      </div>
-                      <h3 className="text-2xl font-bold">Project {1}</h3>
-                      <p className="text-gray-500 dark:text-gray-400">
-                        A brief description of this amazing project and what problems it solves.
-                      </p>
-                      <Link href={`/projects/1`}>
-                        <Button variant="outline" className="w-full relative overflow-hidden group">
-                          <span className="relative z-10">View Project</span>
-                          <motion.div
-                            className="absolute inset-0 bg-primary/10"
-                            initial={{ x: "-100%" }}
-                            whileHover={{ x: 0 }}
-                            transition={{ duration: 0.3 }}
-                          />
-                        </Button>
-                      </Link>
-                    </div>
-                  </AnimatedCard>
-
-
+                ))}
               </div>
+
               <AnimatedSection delay={0.6} className="flex justify-center">
                 <Link href="/projects">
                   <Button variant="outline" className="relative overflow-hidden group">
@@ -253,52 +171,8 @@ export default function Home() {
               </AnimatedSection>
             </div>
           </section>
-                    {/* Timeline Highlights Section */}
-          {/* <section className="w-full py-12 md:py-24 relative overflow-hidden">
-            <BackgroundPattern variant="dots" opacity={0.03} />
-            <div className="container px-4 md:px-6 relative z-10">
-              <AnimatedSection className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Journey Highlights</h2>
-                  <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                    Key milestones from my entrepreneurial path
-                  </p>
-                </div>
-              </AnimatedSection>
 
-              <div className="grid gap-8 md:grid-cols-3">
-                {timelineHighlights.map((item, index) => (
-                  <AnimatedCard
-                    key={item.id}
-                    delay={0.05 * index}
-                    className="flex flex-col p-6 bg-card rounded-lg border shadow-sm"
-                  >
-                    <div className="flex items-center gap-3 mb-3">
-                      <Clock className="h-5 w-5 text-primary" />
-                      <span className="text-sm font-medium text-primary">{item.year}</span>
-                    </div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-gray-500 dark:text-gray-400 flex-1">{item.description}</p>
-                  </AnimatedCard>
-                ))}
-              </div>
-
-              <AnimatedSection delay={0.4} className="flex justify-center mt-8">
-                <Link href="/timeline">
-                  <Button variant="outline" className="relative overflow-hidden group">
-                    <span className="relative z-10">View Full Timeline</span>
-                    <motion.div
-                      className="absolute inset-0 bg-primary/10"
-                      initial={{ x: "-100%" }}
-                      whileHover={{ x: 0 }}
-                      transition={{ duration: 0.3 }}
-                    />
-                    <ArrowRight className="ml-2 h-4 w-4 relative z-10" />
-                  </Button>
-                </Link>
-              </AnimatedSection>
-            </div>
-          </section> */}
+          {/* Blog Posts */}
           <section className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
             <BackgroundGradient variant="secondary" />
             <BackgroundShapes variant="squares" count={6} />
@@ -307,24 +181,35 @@ export default function Home() {
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Latest Blog Posts</h2>
                   <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                    Insights, thoughts, and lessons from my entrepreneurial journey.
+                    Insights, thoughts, and lessons from my journey.
                   </p>
                 </div>
               </AnimatedSection>
-              <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2">
-                {[1, 2, 3, 4].map((post, index) => (
-                  <AnimatedCard
-                    key={post}
-                    delay={0.2 * index}
-                    className="rounded-lg border bg-card text-card-foreground shadow-sm"
-                  >
-                    <div className="p-6 space-y-4">
-                      <h3 className="text-2xl font-bold">Blog Post Title {post}</h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">Published on April {post}, 2023</p>
-                      <p className="text-gray-500 dark:text-gray-400">
-                        A preview of this insightful blog post about entrepreneurship, innovation, or personal growth.
-                      </p>
-                      <Link href={`/blog/${post}`}>
+
+              <div className="mx-auto grid max-w-5xl items-stretch gap-6 py-12 lg:grid-cols-2">
+                {[
+                    {
+
+                      title: "Protecting Privacy in Menstrual Health Apps: What, Why and How?",
+                      description: "Explores the privacy concerns associated with menstrual health apps and discusses how federated learning can offer solutions.",
+                      date: "December 7, 2024",
+                      slug: "https://medium.com/@yuvraj.s.bhadauria/protecting-privacy-in-menstrual-health-apps-what-why-and-how-b8be5e91cb27",
+                    },
+                    {
+                      title: "Internet In Privacy Out? Connected Cars Could Become a Privacy Nightmare",
+                      description: "Analyzes the privacy implications of connected vehicles and the potential misuse of personal data collected by car manufacturers.",
+                      date: "December 6, 2024",
+                      slug: "https://medium.com/@yuvraj.s.bhadauria/internet-in-privacy-out-connected-cars-could-become-a-privacy-nightmare-e52f85ca7977",
+                    },
+                ].map((post, index) => (
+                  <AnimatedCard key={post.slug} delay={0.2 * index} className="rounded-lg border bg-card text-card-foreground shadow-sm h-full flex flex-col justify-between">
+                    <div className="p-6 flex flex-col h-full">
+                      <div className="space-y-4 flex-1">
+                        <h3 className="text-2xl font-bold">{post.title}</h3>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">Published on {post.date}</p>
+                        <p className="text-gray-500 dark:text-gray-400">{post.description}</p>
+                      </div>
+                      <Link href={`${post.slug}`} className="mt-4">
                         <Button variant="outline" className="w-full relative overflow-hidden group">
                           <span className="relative z-10">Read More</span>
                           <motion.div
@@ -339,6 +224,7 @@ export default function Home() {
                   </AnimatedCard>
                 ))}
               </div>
+
               <AnimatedSection delay={0.6} className="flex justify-center">
                 <Link href="/blog">
                   <Button variant="outline" className="relative overflow-hidden group">
@@ -355,11 +241,12 @@ export default function Home() {
             </div>
           </section>
         </main>
+
         <footer className="w-full border-t py-6 relative">
           <BackgroundPattern variant="dots" opacity={0.03} />
           <div className="container flex flex-col items-center justify-between gap-4 md:flex-row px-4 md:px-6 relative z-10">
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              © {new Date().getFullYear()} [Yuvraj S Bhadauria]. All rights reserved.
+              © {new Date().getFullYear()} Yuvraj S Bhadauria. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
               <Link href="/about" className="text-sm text-gray-500 hover:underline dark:text-gray-400">
