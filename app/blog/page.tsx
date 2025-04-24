@@ -83,8 +83,7 @@ export default function BlogPage() {
             </Link>
             <h1 className="text-4xl font-bold tracking-tight">My Blog</h1>
             <p className="text-xl text-gray-500 dark:text-gray-400 max-w-3xl">
-              Thoughts, insights, and lessons from my entrepreneurial journey. I write about business, innovation,
-              personal growth, and more.
+            I write about privacy challenges in emerging technologies and how we can design responsible systems to protect users.
             </p>
           </AnimatedSection>
   
