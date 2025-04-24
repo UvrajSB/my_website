@@ -63,13 +63,13 @@ export default function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.5 }}
                   >
-                    <Link href="https://twitter.com/yourusername" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 transition-colors">
+                    <Link href="https://x.com/YuvrajSB_" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 transition-colors">
                       <Twitter className="h-5 w-5" />
                     </Link>
                     <Link href="https://github.com/UvrajSB" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 transition-colors">
                       <Github className="h-5 w-5" />
                     </Link>
-                    <Link href="https://linkedin.com/in/yuvrajbhadauria" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 transition-colors">
+                    <Link href="https://www.linkedin.com/in/yuvraj-singh-bhadauria-927a1b1b9/" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 transition-colors">
                       <Linkedin className="h-5 w-5" />
                     </Link>
                   </motion.div>
