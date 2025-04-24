@@ -9,17 +9,17 @@ interface BackgroundGradientProps {
 }
 
 export function BackgroundGradient({ className = "", variant = "primary" }: BackgroundGradientProps) {
-  const { theme } = useTheme()
+  const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
   }, [])
 
-  if (!mounted) return null
+  if (!mounted || !resolvedTheme) return null
 
   const getGradient = () => {
-    const isDark = theme === "dark"
+    const isDark = resolvedTheme === "dark"
 
     switch (variant) {
       case "primary":
