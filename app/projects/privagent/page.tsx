@@ -10,11 +10,10 @@ import { AnimatedSection } from "@/components/animated-section"
 import { BackgroundPattern } from "@/components/background-pattern"
 
 const projects = [
-  {
+{
     id: "privagent",
-    title: "PrivAgent – Privacy-First Conversational Agent Framework",
-    description:
-      "A privacy-preserving agent framework that uses Homomorphic Encryption to enable secure encrypted data processing with LLMs.",
+    title: "PrivAgents",
+    description: "Agents utilising Privacy Enhancement Techniques tools for secure interaction with MCP servers",
     date: "April 2025",
     client: "Personal Project",
     role: "Creator & Developer",
@@ -22,97 +21,74 @@ const projects = [
     website: "https://github.com/UvrajSB/PrivAgent",
     github: "https://github.com/UvrajSB/PrivAgent",
     content: [
-      {
-        type: "heading",
-        content: "Overview",
+        { type: "heading", content: "Overview" },
+        {
+            type: "paragraph",
+            content: "Take Homomorphic Encryption for example. Agents can offload compute to MCP servers that are equipped to work with encrypted data. This not only allows us to build MCP servers for private data in general but also paves the way for on-device AI. Lightweight agentic frameworks can rely on MCP servers for computationally expensive tasks by sharing data in encrypted form, leading to highly functional, privacy-preserving on-device AI systems."
+        },
+        { type: "heading", content: "Why PrivAgent" },
+        {
+            type: "table",
+            headers: ["Feature", "Description"],
+            rows: [
+                ["Agent Flexibility", "On-device or cloud-based agents to suit your compute and trust needs"],
+                ["Data Privacy", "Homomorphic encryption ensures data remains private during processing"],
+                ["Modular Backend", "Modular MCP server performs encrypted similarity calculations on the backend"],
+                ["Secure Pipeline", "End-to-end encrypted pipeline for secure data interaction"]
+            ]
+        },
+        { type: "heading", content: "Supported Agents" },
+        {
+            type: "table",
+            headers: ["Agent", "Description"],
+            rows: [
+                ["Ollama Agent", "For on-device reasoning using local models"],
+                ["OpenAI Agent", "For cloud-based intelligence via API"]
+            ]
+        },
+        { type: "heading", content: "Architecture Overview" },
+        { type: "image", url: "/privagent.png" },
+        {
+            type: "paragraph",
+            content: "The architecture involves a user device handling agent and encryption tasks, communicating over a secure channel with an MCP server for encrypted similarity calculations, and returning encrypted results to the user device for decryption."
+        },
+        { type: "heading", content: "Movie Preference Matching" },
+        {
+          type: "paragraph",
+          content: "The Movie Preference Matching use case is a practical demonstration of a privacy-preserving recommendation system powered by homomorphic encryption. It allows users to receive personalized movie recommendations without exposing their preferences in plaintext, ensuring complete data confidentiality throughout the process. The workflow involves encrypting user preferences on their device, performing secure computations on the MCP server, and decrypting results locally to deliver tailored recommendations."
       },
       {
-        type: "image",
-        url: "/privagent.png",
+          type: "table",
+          headers: ["Step", "Description"],
+          rows: [
+              ["User Input", "The user provides a movie interest vector, rating genres like Action, Romance, and Sci-Fi (e.g., [8, 2, 9] for high preference in Action and Sci-Fi, low in Romance)."],
+              ["Encryption", "The agent (Ollama or OpenAI) uses the TenSEAL library with the BFV homomorphic encryption scheme to encrypt the interest vector into an unreadable tensor."],
+              ["Server Processing", "The MCP server, holding plaintext movie profiles (e.g., Inception: [9, 1, 8]), computes encrypted similarity scores using dot products between the encrypted user vector and each movie profile, without ever decrypting the user data."],
+              ["Result Storage", "Encrypted similarity scores for all movies are saved to a file (e.g., data/interest_results) and sent back to the user device."],
+              ["Decryption", "The agent decrypts the similarity scores locally using the original encryption context and keys, revealing how closely each movie matches the user's preferences."],
+              ["Recommendation", "The agent sorts the decrypted scores and presents the top movie recommendations, ensuring the entire process is secure and private."]
+          ]
       },
       {
-        type: "paragraph",
-        content:
-          "PrivAgent enables intelligent agents to perform encrypted computations using a secure MCP server. The system encrypts user preferences on-device, sends it to an MCP that operates on the encrypted data, and returns secure results. No sensitive data is ever decrypted in transit or on the server.",
+          type: "paragraph",
+          content: "This use case highlights the power of homomorphic encryption in enabling secure, personalized recommendations. By keeping user data encrypted during server-side computations, PrivAgents ensures zero trust is required from the server, making it ideal for sensitive applications like movie recommendations, where user preferences could reveal personal tastes or behaviors."
       },
-      {
-        type: "heading",
-        content: "Key Features",
-      },
-      {
-        type: "table",
-        headers: ["Feature", "Description"],
-        rows: [
-          ["Encrypted Computation", "Performs all processing using Homomorphic Encryption on user-encrypted vectors."],
-          ["Agentic Workflow", "Uses LangGraph-based agents to coordinate secure tool execution."],
-          ["Dual Agent Support", "Includes both on-device and cloud-based agents for flexible deployments."],
-          ["MCP Server", "Handles encrypted operations like similarity scoring, transformation, or aggregation."],
-        ],
-      },
-      {
-        type: "heading",
-        content: "Technologies",
-      },
-      {
-        type: "table",
-        headers: ["Component", "Purpose"],
-        rows: [
-          ["LangGraph + LLM Agent", "Coordinates tool usage and encrypted task flow"],
-          ["TenSEAL", "Performs Homomorphic Encryption for privacy-preserving ops"],
-          ["FastMCP", "Custom server for processing encrypted vectors"],
-        ],
-      },
-    ],
-  },
-  {
-    id: "interface",
-    title: "Interface – Privacy-Preserving LLM Interaction Tool",
-    description: "A secure interface for interacting with cloud-based LLMs that leverages local on-device models to ensure user data privacy.",
-    date: "March 2025",
-    client: "Personal Project",
-    role: "Creator & Developer",
-    tags: ["LLM", "Privacy", "Edge AI", "On-Device", "SLM"],
-    website: "https://github.com/UvrajSB/Interface",
-    github: "https://github.com/UvrajSB/Interface",
-    content: [
-      {
-        type: "heading",
-        content: "Overview",
-      },
-      {
-        type: "image",
-        url: "/interface.png",
-      },
-      {
-        type: "paragraph",
-        content:
-          "Interface is a privacy-preserving tool for interacting with cloud-hosted Large Language Models (LLMs). It ensures user data remains protected by leveraging an on-device Small Language Model (SLM) for initial queries.\n\nIf the SLM cannot generate a satisfactory response, the query is automatically routed to a cloud-hosted LLM. However, before sending the query, all Personally Identifiable Information (PII) is replaced with synthetic data to maintain privacy. Once the response is received, the tool reverses this process, restoring the original information seamlessly.",
-      },
-      {
-        type: "heading",
-        content: "Key Features",
-      },
-      {
-        type: "table",
-        headers: ["Feature", "Description"],
-        rows: [
-          ["On-Device Processing", "Provides a local SLM for handling queries without external data exposure."],
-          ["Intelligent Query Routing", "Automatically forwards complex queries to cloud LLMs only when necessary."],
-          ["Privacy Protection", "Anonymizes sensitive data before transmission and restores it upon response."],
-          ["Seamless Integration", "Ensures a smooth user experience without compromising security."],
-        ],
-      },
-      {
-        type: "heading",
-        content: "Why Use Interface?",
-      },
-      {
-        type: "paragraph",
-        content:
-          "- Protects user privacy while leveraging powerful cloud-based AI models.\n- Reduces reliance on cloud resources, minimizing costs and latency.\n- Ensures sensitive data never leaves the local environment in an identifiable form.",
-      },
-    ],
-  },
+     
+        { type: "heading", content: "Benefits" },
+        {
+            type: "table",
+            headers: ["Benefit", "Description"],
+            rows: [
+                ["Zero Trust", "Server never sees user data"],
+                ["Agent Agnostic", "Works with both on-device and cloud-based agents"],
+                ["Extendable", "Can support more complex user profiles or additional domains (like music, shopping, healthcare)"],
+                ["Educational", "Demonstrates how homomorphic encryption works in a practical context"]
+            ]
+        },
+        { 
+          type: "hr"},
+    ]
+},
 ]
 
 export default function ProjectsPage() {
@@ -229,7 +205,7 @@ export default function ProjectsPage() {
                               <table className="w-full border-collapse text-sm">
                                 <thead>
                                   <tr className="border-b">
-                                    {section.headers.map((header, i) => (
+                                    {section.headers?.map((header, i) => (
                                       <th key={i} className="px-4 py-2 text-left font-medium">
                                         {header}
                                       </th>
@@ -237,7 +213,7 @@ export default function ProjectsPage() {
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  {section.rows.map((row, i) => (
+                                  {section.rows?.map((row, i) => (
                                     <tr key={i} className="border-b">
                                       {row.map((cell, j) => (
                                         <td key={j} className="px-4 py-2 text-gray-500 dark:text-gray-400">
@@ -249,6 +225,12 @@ export default function ProjectsPage() {
                                 </tbody>
                               </table>
                             </div>
+                          </AnimatedSection>
+                        )
+                      case "hr":
+                        return (
+                          <AnimatedSection key={index} delay={0.05 * index}>
+                            <hr className="my-8 border-t border-gray-200 dark:border-gray-800" />
                           </AnimatedSection>
                         )
                       default:

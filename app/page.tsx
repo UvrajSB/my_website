@@ -105,24 +105,24 @@ export default function Home() {
                 {[
                   {
                     id: "privagent",
-                    title: "Privacy Centric AI Systems",
+                    title: "PrivAgent",
+                    description: "Agents utilising Privacy Enhancement Techniques tools for secure interaction with MCP servers",
+                    image: "/privagent.png",
+                    href: "/projects/privagent",
+                  },
+                  {
+                    id: "interface",
+                    title: "Interface",
+                    description: "A privacy-preserving tool for interacting with cloud-hosted Large Language Models, using on-device Small Language Models and data anonymization",
+                    image: "/interfacebw.png",
+                    href: "/projects/interface",
+                  },
+                  {
+                    id: "privacy",
+                    title: "Privacy Centric AI",
                     description: "Developing privacy-centric AI systems with Federated learning & Privacy-Enhancement Techniques for the past 3 years.",
-                    image: "/p2.jpg",
+                    image: "/p1.jpg",
                     href: "/projects/Privacy",
-                  },
-                  {
-                    id: "llm",
-                    title: "LLMs",
-                    description: "Working with agentic frameworks, on-device deployment and optimisations of Small language models for edge.",
-                    image: "/p3.jpg",
-                    href: "/projects/llm",
-                  },
-                  {
-                    id: "rf",
-                    title: "RF Sensing",
-                    description: "Developed batterless IoT sensing system using tunnel diodes for unintrusive respiratory rate monitoring.",
-                    image: "p1.jpg",
-                    href: "/projects/RF",
                   },
                 ].map((project, index) => (
                   <AnimatedCard key={project.id} delay={0.2 * index} className="rounded-lg border bg-card text-card-foreground shadow-sm h-full flex flex-col justify-between">
@@ -189,7 +189,6 @@ export default function Home() {
               <div className="mx-auto grid max-w-5xl items-stretch gap-6 py-12 lg:grid-cols-2">
                 {[
                     {
-
                       title: "Protecting Privacy in Menstrual Health Apps: What, Why and How?",
                       description: "Explores the privacy concerns associated with menstrual health apps and discusses how federated learning can offer solutions.",
                       date: "December 7, 2024",

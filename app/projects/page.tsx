@@ -24,15 +24,24 @@ export default function ProjectsPage() {
     },
     {
       id: 2,
-      title: "LLMs",
+      title: "PrivAgent",
       description:
-        "Working with agentic frameworks, on-device deployment and optimisations of Small language models for edge.",
-      image: "/p3.jpg?height=300&width=500&text=Project+Two",
+        "Agents utilising Privacy Enhancement Techniques tools for secure interaction with MCP servers.",
+      image: "/privagent.png",
       tags: ["Ollama", "Langgraph", "Edge"],
-      link: "/projects/llm",
+      link: "/projects/privagent",
     },
     {
       id: 3,
+      title: "Interface",
+      description:
+        "A secure interface for interacting with cloud-based agents that leverages local on-device models to ensure user data privacy.",
+      image: "/interfacebw.png",
+      tags: ["Privacy", "Edge AI", "On-Device", "SLM", "Agent Framework"],
+      link: "/projects/interface",
+    },
+    {
+      id: 4,
       title: "RF Sensing",
       description:
         "Developed batterless IoT sensing system using tunnel diodes for unintrusive respiratory rate monitoring.",
@@ -41,7 +50,7 @@ export default function ProjectsPage() {
       link: "/projects/RF",
     },
     {
-      id: 4,
+      id: 5,
       title: "Blockchain",
       description:
       "Developed PoCs for blockchain-based product warranty systems and consent management solutions.",
@@ -50,7 +59,7 @@ export default function ProjectsPage() {
       link: "/projects/Blockchain",
     },
     {
-      id: 5,
+      id: 6,
       title: "Android",
       description:
       "Built several apps using native Android and shared my knowledge by teaching app development to over 500 people.",
@@ -59,7 +68,7 @@ export default function ProjectsPage() {
       link: "/projects/Android",
     },
     {
-      id: 6,
+      id: 7,
       title: "Backend",
       description:
       "Worked on building a content delivery platform using a microservices architecture, serving millions of requests a day.",

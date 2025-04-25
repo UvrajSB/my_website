@@ -50,7 +50,7 @@ export default function Header() {
         </div>
       </div>
       {isMenuOpen && (
-        <div className="fixed inset-0 top-16 z-50 bg-white dark:bg-gray-950 border-t md:hidden">
+        <div className="fixed inset-0 top-16 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-t md:hidden">
           <div className="container flex h-full flex-col items-center justify-center gap-6 p-4">
             <Button variant="ghost" size="icon" className="absolute right-4 top-4" onClick={() => setIsMenuOpen(false)}>
               <X className="h-6 w-6" />
