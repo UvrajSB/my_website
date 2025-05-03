@@ -15,7 +15,7 @@ export default function TimelinePage() {
     {
       id: 1,
       year: "2025",
-      title: "Paper Accepted:UnifyFL: Enabling Decentralized Cross-Silo Federated Learning",
+      title: "Paper Accepted: UnifyFL: Enabling Decentralized Cross-Silo Federated Learning",
       description:
         "ACM/IFIP International Middleware Conference (MIDDLEWARE 2025)",
       image: "/placeholder.svg?height=20&width=20&text=2023",

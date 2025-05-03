@@ -181,6 +181,15 @@ export default function AboutPage() {
           <section className="space-y-4">
             <h2 className="text-3xl font-bold">Grants & Publications</h2>
             <div className="space-y-6">
+            <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <Award className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold">[Paper] UnifyFL: Enabling Decentralized Cross-Silo Federated Learning</h3>
+                  <p className="text-gray-500 dark:text-gray-400">26th ACM/IFIP International Middleware Conference (MIDDLEWARE 2025)</p>
+                </div>
+              </div>
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
                   <Award className="h-6 w-6 text-primary" />
@@ -193,10 +202,6 @@ export default function AboutPage() {
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
                   <Award className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold">[Paper] UnifyFL: Enabling Decentralized Cross-Silo Federated Learning</h3>
-                  <p className="text-gray-500 dark:text-gray-400">26th ACM/IFIP International Middleware Conference (MIDDLEWARE 2025)</p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold">[Poster] Enabling Non-contact, Low-Power Sensing using Tunnel Diodes</h3>
