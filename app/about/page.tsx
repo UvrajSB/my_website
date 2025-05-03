@@ -195,6 +195,10 @@ export default function AboutPage() {
                   <Award className="h-6 w-6 text-primary" />
                 </div>
                 <div>
+                  <h3 className="text-xl font-semibold">[Paper] UnifyFL: Enabling Decentralized Cross-Silo Federated Learning</h3>
+                  <p className="text-gray-500 dark:text-gray-400">26th ACM/IFIP International Middleware Conference (MIDDLEWARE 2025)</p>
+                </div>
+                <div>
                   <h3 className="text-xl font-semibold">[Poster] Enabling Non-contact, Low-Power Sensing using Tunnel Diodes</h3>
                   <p className="text-gray-500 dark:text-gray-400">International Conference on Information Processing in Sensor Networks (IPSN), 2024</p>
                 </div>
