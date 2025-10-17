@@ -15,6 +15,14 @@ export default function TimelinePage() {
     {
       id: 1,
       year: "2025",
+      title: "Joined Zingle AI labs as First Employee",
+      description:
+        "Joined as Founding PM [First Employee] at Zingle AI labs. Interviewed 50+ Data teams working with AI. Developed 20+ prototypes. Managing launches on Databricks and Snowflakes marketplaces with their key holders. Looking into growth, hiring and partnership aspects as well.",
+      image: "/placeholder.svg?height=20&width=20&text=2023",
+    },
+    {
+      id: 1,
+      year: "2025",
       title: "Paper Accepted: UnifyFL: Enabling Decentralized Cross-Silo Federated Learning",
       description:
         "ACM/IFIP International Middleware Conference (MIDDLEWARE 2025)",
@@ -38,10 +46,10 @@ export default function TimelinePage() {
     },
     {
       id: 1,
-      year: "2024",
-      title: "Started Working as Product Engineer: Adster",
+      year: "2024 - 2025",
+      title: "Product Engineer: Adster",
       description:
-        "Designing, developing, and deploying features for high-throughput, low-latency systems to power real-time performance at scale.",
+        "Designed, developed, and deployed features for high-throughput, low-latency systems to power real-time performance at scale.",
       image: "/placeholder.svg?height=20&width=20&text=2023",
     },
     {

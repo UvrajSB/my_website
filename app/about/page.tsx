@@ -98,6 +98,18 @@ export default function AboutPage() {
                   <Briefcase className="h-6 w-6 text-primary" />
                 </div>
                 <div>
+                  <h3 className="text-xl font-semibold">Zingle AI labs - Founding PM [First Employee]</h3>
+                  <p className="text-gray-500 dark:text-gray-400">[Jun 2025 - Present]</p>
+                  <p className="text-gray-500 dark:text-gray-400 mt-2">
+                    Interviewed 50+ Data teams working with AI. Developed 20+ prototypes. Managing launches on Databricks and Snowflakes marketplaces with their key holders. Looking into growth, hiring and partnership aspects as well.
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <Briefcase className="h-6 w-6 text-primary" />
+                </div>
+                <div>
                   <h3 className="text-xl font-semibold">FlintX - Co-Founder & CTO</h3>
                   <p className="text-gray-500 dark:text-gray-400">[Oct 2024-Present]</p>
                   <p className="text-gray-500 dark:text-gray-400 mt-2">
@@ -111,7 +123,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold">Adster - Product Engineer</h3>
-                  <p className="text-gray-500 dark:text-gray-400">[March 2024 - Sept 2024]</p>
+                  <p className="text-gray-500 dark:text-gray-400">[March 2024 - May 2025]</p>
                   <p className="text-gray-500 dark:text-gray-400 mt-2">
                   As a Product Engineer, I participated in feature scoping and implementation design. I dealt with low-latency systems with high throughput, processing millions of requests on daily basis. From writing the code to deploying it on our clusters, I was responsible for taking my pieces from conception to production and optimizing them. My day-to-day work used to revolve around BigQuery, GCP, Kubernetes, Go, and MongoDB.
                   </p>
