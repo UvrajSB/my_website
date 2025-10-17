@@ -101,7 +101,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-semibold">Zingle AI labs - Founding PM [First Employee]</h3>
                   <p className="text-gray-500 dark:text-gray-400">[Jun 2025 - Present]</p>
                   <p className="text-gray-500 dark:text-gray-400 mt-2">
-                    Interviewed 50+ Data teams working with AI. Developed 20+ prototypes. Managing launches on Databricks and Snowflakes marketplaces with their key holders. Looking into growth, hiring and partnership aspects as well.
+                  Interviewed over 50 data teams working with AI to understand their workflows and pain points. Built more than 20 prototypes addressing these insights, and now managing product launches on the Databricks and Snowflake marketplaces in collaboration with their key stakeholders. I also contribute to initiatives around growth, hiring, and strategic partnerships.
                   </p>
                 </div>
               </div>
@@ -138,6 +138,18 @@ export default function AboutPage() {
                   <p className="text-gray-500 dark:text-gray-400">[May 2023 - Jan 2024]</p>
                   <p className="text-gray-500 dark:text-gray-400 mt-2">
                   I played a pivotal role in developing battery-free IoT sensing and communication systems using tunnel diodes, resulting in a poster presentation at IPSN 2024 and a published paper in IEEE RFID 2024. This research emphasizes efficient and sustainable solutions for IoT, particularly in low-power consumption, marking a significant contribution to the field of ubiquitous sensing.
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <Briefcase className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold">DaSH Lab, BITS Pilani - Undergraduate Research Assistant</h3>
+                  <p className="text-gray-500 dark:text-gray-400">[Nov 2021 - Jan 2024]</p>
+                  <p className="text-gray-500 dark:text-gray-400 mt-2">
+                  Supervised by Prof. Arnab K. Paul. Assembled and configured a robust cluster of IBM X-series servers and Raspberry Pi nodes for enhanced scalable computing capabilities. Deployed a Performance Co-Pilot monitoring dashboard for real-time analytics across the cluster. Developed an inter-cluster collaboration framework to enhance Federated Learning operations among organizations while ensuring flexibility and trust. Also initiated the UnifyFL project, which was later accepted at multiple high-impact venues for its contributions to decentralized and privacy-preserving federated learning.
                   </p>
                 </div>
               </div>

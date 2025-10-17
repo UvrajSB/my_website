@@ -17,7 +17,7 @@ export default function TimelinePage() {
       year: "2025",
       title: "Joined Zingle AI labs as First Employee",
       description:
-        "Joined as Founding PM [First Employee] at Zingle AI labs. Interviewed 50+ Data teams working with AI. Developed 20+ prototypes. Managing launches on Databricks and Snowflakes marketplaces with their key holders. Looking into growth, hiring and partnership aspects as well.",
+        "",
       image: "/placeholder.svg?height=20&width=20&text=2023",
     },
     {
