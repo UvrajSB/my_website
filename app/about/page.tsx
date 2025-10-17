@@ -111,9 +111,9 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold">FlintX - Co-Founder & CTO</h3>
-                  <p className="text-gray-500 dark:text-gray-400">[Oct 2024-Present]</p>
+                  <p className="text-gray-500 dark:text-gray-400">[Oct 2024-May 2025]</p>
                   <p className="text-gray-500 dark:text-gray-400 mt-2">
-                    Working on idea validations and market research for viability of SOTA tech for the privacy focused markets like healthcare, finance and defence.
+                  Co-founded FlintX to transform my research in Federated Learning into real-world products. Secured incubation at the Hong Kong Science and Technology Park and entry into the NUS GRIP program, working alongside a senior researcher to turn state-of-the-art AI privacy research into deployable solutions.
                   </p>
                 </div>
               </div>
